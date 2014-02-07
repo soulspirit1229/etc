@@ -5,7 +5,7 @@
 set nocompatible
 filetype off
 "
-set rtp+=~/.vim/vundle.git/
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'vividchalk.vim'
@@ -18,6 +18,13 @@ let g:LargeFile=10
 Bundle 'vim-scripts/pig.vim'
 Bundle 'vim-scripts/JavaScript-Indent.git'
 Bundle 'scrooloose/syntastic'
+"
+" Development Tools
+"
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
 
 " use visual bell instead of beeping
 set vb
