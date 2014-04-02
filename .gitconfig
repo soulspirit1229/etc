@@ -1,0 +1,39 @@
+# Documentation on this file available at:
+#   <ref: http://git-scm.com/book/ch7-1.html>
+
+[user]
+
+[alias]
+  ca = commit -a
+  ci = commit --interactive
+  co = checkout
+  st = !git status && echo && (git l origin..HEAD 2> /dev/null) || (git l $USER/master..HEAD 2> /dev/null)
+  ls = ls-files --stage --abbrev
+  up = remote update
+  info = show-ref -h
+  d = whatchanged -p
+  l = log --graph --oneline --all --decorate
+  lg = log -p
+  b = branch -av
+  t = tag -n
+  who = shortlog -s --
+  graph = log --graph --oneline --all --decorate
+  f = !git fetch --all --tags --verbose && git remote --verbose update --prune
+  r = rebase -i HEAD~10
+  stat = log --oneline --shortstat
+  track = checkout --track -b
+  auth = !git log --format='%aN <%aE>' | awk '{arr[$0]++} END{for (i in arr){print arr[i], i}}' | sort -rn
+  diffproce = diff --word-diff=porcelain
+  diffcolor = diff --word-diff=color
+
+[core]
+[color]
+  ui = true
+[push]
+  default = current  # push current branch rather than ALL matching branches
+
+[user]
+	email = algerhoi@gmail.com
+	name = Alger Hoi
+[core]
+	editor = /usr/bin/vim
