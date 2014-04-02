@@ -11,6 +11,16 @@ if [ -f $PREFIX_PATH/etc/bash_completion ]; then
   . $PREFIX_PATH/etc/bash_completion
 fi
 
+## Bash Prompt
+if [ -f ~/.bash_prompt ]; then
+  . ~/.bash_prompt
+fi
+
+## Bash Alias
+if [ -f ~/.bash_aliases ]; then
+  . ~/.bash_aliases
+fi
+
 #UTF-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
