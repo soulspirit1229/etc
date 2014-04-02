@@ -7,19 +7,7 @@
 #                                                                       [n=80] #
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""#
 export SHELL := /bin/bash
-export SCP = scp -o "StrictHostKeyChecking no"
-export SSH = ssh -o "StrictHostKeyChecking no"
-
-# Coloring
-color=\x1b[$(1)m
-RESET=\x1b[0m
-
-# http://jamesdolan.blogspot.hk/2009/10/color-coding-makefile-output.html
-VERB=$(call color,35;01)[VERB]$(RESET)    # green
-INFO=$(call color,32;01)[INFO]$(RESET)    # green
-DEBUG=$(call color,34;01)[DEBUG]$(RESET)  # blue
-WARN=$(call color,33;01)[WARN]$(RESET)    # yellow
-ERR=$(call color,31;01)[ERR]$(RESET)      # red
+export SSH = ssh
 
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Rules "
 all: vim
@@ -39,6 +27,6 @@ deploy:
 	${SSH} ${TARGET} mv '~/etc/.git' '~' || true
 	${SSH} ${TARGET} rm -fr etc
 	${SSH} ${TARGET} git reset --hard
-	${SSH} ${TARGET} make -j .vim/bundle/vundle
+	${SSH} ${TARGET} make -j vim
 
 .PHONY: all vim
